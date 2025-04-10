@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Contact | Industries</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+        <style>
+            body {
+            background-color: #f8f9fa;
+            }
+
+            .contact-header {
+            background: linear-gradient(135deg, #009543, #fcd116, #dc241f);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            }
+
+            .contact-header h1 {
+            font-weight: bold;
+            }
+
+            .form-control:focus {
+            border-color: #009543;
+            box-shadow: 0 0 0 0.2rem rgba(0, 149, 67, 0.25);
+            }
+
+            .btn-congo {
+            background-color: #009543;
+            color: white;
+            border: none;
+            }
+
+            .btn-congo:hover {
+            background-color: #007a35;
+            }
+
+            .contact-icon {
+            color: #009543;
+            }
+        </style>
+    </head>
+    <body>
+
+     <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <i class="bi bi-box-seam me-2 fs-4"></i>
+        <span class="fw-bold">Industries</span>
+      </a>
+
+      <!-- Bouton burger pour mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Afficher le menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Liens de navigation -->
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#produits"><i class="bi bi-boxes me-1"></i>Produits</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="secteur.php#secteurs"><i class="bi bi-diagram-3 me-1"></i>Secteurs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="apropos.php#apropos"><i class="bi bi-info-circle me-1"></i>À propos</a>
+          </li>
+        </ul>
+        <a href="contact.php#contact" class="btn btn-outline-light ms-lg-3 mt-3 mt-lg-0">
+          <i class="bi bi-envelope-fill me-1"></i> Contact
+        </a>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Header -->
+    <header class="contact-header">
+        <div class="container">
+        <h1 class="display-4">Contactez-nous</h1>
+        <p class="lead">Une question ? Une collaboration ? Nous sommes à votre écoute.</p>
+        </div>
+    </header>
+
+    <!-- Formulaire de contact -->
+    <section class="py-5">
+        <div class="container">
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-8">
+            <form>
+                <div class="mb-3">
+                <label for="nom" class="form-label">Nom complet</label>
+                <input type="text" class="form-control" id="nom" placeholder="Votre nom">
+                </div>
+                <div class="mb-3">
+                <label for="email" class="form-label">Adresse e-mail</label>
+                <input type="email" class="form-control" id="email" placeholder="exemple@domaine.com">
+                </div>
+                <div class="mb-3">
+                <label for="sujet" class="form-label">Sujet</label>
+                <input type="text" class="form-control" id="sujet" placeholder="Objet de votre message">
+                </div>
+                <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="5" placeholder="Votre message ici..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-congo px-4">Envoyer</button>
+            </form>
+            </div>
+        </div>
+
+        <div class="row text-center mt-5">
+            <div class="col-md-4 mb-4">
+            <i class="bi bi-telephone-fill contact-icon fs-3"></i>
+            <h6 class="mt-2">Téléphone</h6>
+            <p>+242 06 560 46 70</p>
+            </div>
+            <div class="col-md-4 mb-4">
+            <i class="bi bi-envelope-fill contact-icon fs-3"></i>
+            <h6 class="mt-2">Email</h6>
+            <p>dgdi@industries-cg.com</p>
+            </div>
+            <div class="col-md-4 mb-4">
+            <i class="bi bi-geo-alt-fill contact-icon fs-3"></i>
+            <h6 class="mt-2">Adresse</h6>
+            <p>Brazzaville, avenue deni sassou nguesso</p>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+        <p class="mb-0">&copy; 2025 Produits Multi-Industries. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
