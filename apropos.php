@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>À propos | Industries</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+<?php $pageTitle = "Produits par Industrie"; ?>
+<?php include('header.php'); ?>
+
   <style>
     .hero-about {
       background: url('Sanstitre.jpg') center/cover no-repeat;
@@ -19,8 +14,8 @@
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background-color: rgba(104, 136, 104, 0.92); /* Vert de la République du Congo */
-      backdrop-filter: blur(4px);
+      background-color: rgba(36, 37, 36, 0.79); Vert de la République du Congo
+      /* backdrop-filter: blur(4px); */
       z-index: 1;
     }
 
@@ -64,48 +59,12 @@
       color: #D40000; /* Rouge du drapeau pour les titres */
     }
   </style>
-</head>
-<body>
-
-   <!-- Navbar -->
-   <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="#">
-        <i class="bi bi-box-seam me-2 fs-4"></i>
-        <span class="fw-bold">Industries</span>
-      </a>
-
-      <!-- Bouton burger pour mobile -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
-        aria-controls="navbarContent" aria-expanded="false" aria-label="Afficher le menu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- Liens de navigation -->
-      <div class="collapse navbar-collapse" id="navbarContent">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#produits"><i class="bi bi-boxes me-1"></i>Produits</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="secteur.php#secteurs"><i class="bi bi-diagram-3 me-1"></i>Secteurs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="apropos.php#apropos"><i class="bi bi-info-circle me-1"></i>À propos</a>
-          </li>
-        </ul>
-        <a href="contact.php#contact" class="btn btn-outline-light ms-lg-3 mt-3 mt-lg-0">
-          <i class="bi bi-envelope-fill me-1"></i> Contact
-        </a>
-      </div>
-    </div>
-  </nav>
 
   <!-- Hero -->
   <section class="hero-about text-center">
     <div class="container">
       <h1 class="display-4 fw-bold">À propos de nous</h1>
-      <p class="lead">Une équipe passionnée au service de l'innovation industrielle.</p>
+      <p class="lead">La Direction Générale du Developpement Industriel est l'une des directions qui assiste le ministre dans ses actions en matiere du developpement industriel.</p>
     </div>
   </section>
 
@@ -114,20 +73,20 @@
     <div class="container">
       <div class="row align-items-center mb-5">
         <div class="col-md-6">
-          <img src="industrie-energie.jpeg" class="img-fluid rounded shadow" alt="Équipe" />
+          <img src="dgdi.png" class="img-fluid rounded shadow" alt="Équipe" />
         </div>
         <div class="col-md-6">
           <h2 class="mb-3">Qui sommes-nous ?</h2>
-          <p>Depuis 2010, notre entreprise s’engage à fournir des produits fiables, durables et innovants pour divers secteurs : technologie, chimie, agroalimentaire et plus encore.</p>
-          <p>Nous combinons expertise métier, éthique environnementale et veille technologique pour accompagner nos clients vers l’avenir.</p>
+          <p>En vue de l'attribution consignée dans le decret n0 2022-148 du 1er Avril 2022, La DGDI est ainsi chargée de mettre en ouevre la politique industrielle du gouvernement.</p>
+          <p>Oreinter et encourager l'intégration du tissu industriel national.</p>
         </div>
       </div>
 
       <div class="row text-center">
         <div class="col-md-4">
           <i class="bi bi-globe2 section-icon mb-2"></i>
-          <h5>Présence internationale</h5>
-          <p>Nous opérons dans plus de 30 pays avec un réseau solide de partenaires et de distributeurs.</p>
+          <h5>Nos missions</h5>
+          <p>Assurer le controle industriel en vue de verifier le respect de la reglementation en vigueur et les réalisations des entreprises bénéficiaires de la charte nationale des investissement.</p>
         </div>
         <div class="col-md-4">
           <i class="bi bi-award section-icon mb-2"></i>
@@ -143,13 +102,43 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-4 mt-5">
-    <div class="container">
-      <p class="mb-0">&copy; 2025 Produits Multi-Industries. Tous droits réservés.</p>
-    </div>
-  </footer>
+<!-- Bouton retour en haut -->
+<button id="btnTop" class="btn" title="Retour en haut">
+  <i class="bi bi-arrow-up"></i>
+</button>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+<!-- Script pour le bouton de retour en haut -->
+<script>
+  const btnTop = document.getElementById("btnTop");
+  window.addEventListener("scroll", () => {
+    btnTop.style.display = window.scrollY > 200 ? "block" : "none";
+  });
+
+  btnTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
+<?php include('footer.php'); ?>
+
+<!-- Style supplémentaire pour positionner et styliser le bouton -->
+<style>
+  #btnTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #006400; /* Fond vert */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: none;
+  }
+
+  #btnTop:hover {
+    background-color: #D40000; /* Changer la couleur au survol */
+  }
+</style>

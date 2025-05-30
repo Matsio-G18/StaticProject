@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Secteurs d'activité | Industries</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+<?php $pageTitle = "Produits par Industrie"; ?>
+<?php include('header.php'); ?>
   <style>
     .sector-hero {
       background: linear-gradient(135deg, #009543, #fcd116, #dc241f);
@@ -37,41 +31,8 @@
     }
   </style>
 </head>
-<body>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="#">
-        <i class="bi bi-box-seam me-2 fs-4"></i>
-        <span class="fw-bold">Industries</span>
-      </a>
-
-      <!-- Bouton burger pour mobile -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
-        aria-controls="navbarContent" aria-expanded="false" aria-label="Afficher le menu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- Liens de navigation -->
-      <div class="collapse navbar-collapse" id="navbarContent">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#produits"><i class="bi bi-boxes me-1"></i>Produits</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#secteurs"><i class="bi bi-diagram-3 me-1"></i>Secteurs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="apropos.php#apropos"><i class="bi bi-info-circle me-1"></i>À propos</a>
-          </li>
-        </ul>
-        <a href="contact.php#contact" class="btn btn-outline-light ms-lg-3 mt-3 mt-lg-0">
-          <i class="bi bi-envelope-fill me-1"></i> Contact
-        </a>
-      </div>
-    </div>
-  </nav>
+ 
 
   <!-- Header -->
   <section class="sector-hero">
@@ -142,13 +103,43 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-4 mt-5">
-    <div class="container">
-      <p class="mb-0">&copy; 2025 Produits Multi-Industries. Tous droits réservés.</p>
-    </div>
-  </footer>
+ <!-- Bouton retour en haut -->
+<button id="btnTop" class="btn" title="Retour en haut">
+  <i class="bi bi-arrow-up"></i>
+</button>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+<!-- Script pour le bouton de retour en haut -->
+<script>
+  const btnTop = document.getElementById("btnTop");
+  window.addEventListener("scroll", () => {
+    btnTop.style.display = window.scrollY > 200 ? "block" : "none";
+  });
+
+  btnTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
+<?php include('footer.php'); ?>
+
+<!-- Style supplémentaire pour positionner et styliser le bouton -->
+<style>
+  #btnTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #006400; /* Fond vert */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: none;
+  }
+
+  #btnTop:hover {
+    background-color: #D40000; /* Changer la couleur au survol */
+  }
+</style>
