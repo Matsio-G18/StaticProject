@@ -1,6 +1,109 @@
-<?php $pageTitle = "Produits par Industrie"; ?>
-<?php include('header.php'); ?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Secteur Industrielle</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <style>
+    .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
+    .fade-in.show { opacity: 1; transform: translateY(0); }
+
+    .card {
+      overflow: hidden;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-img-top {
+      transition: transform 0.5s ease;
+    }
+
+    .card:hover .card-img-top {
+      transform: scale(1.1);
+    }
+
+    h2.section-title {
+      font-weight: 600;
+      font-size: 2rem;
+      color: #FFCC00;
+    }
+
+    .navbar {
+      background-color: #006400;
+    }
+
+    .navbar .navbar-brand,
+    .navbar .navbar-nav .nav-link {
+      color: #FFCC00;
+    }
+
+    .navbar .navbar-nav .nav-link.active {
+      color: #D40000;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1020;
+      background: url('609825e22fcfe221879880.jpg') center/cover no-repeat;
+      padding: 120px 0;
+      color: white;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      backdrop-filter: blur(6px);
+      background-color: rgba(0,0,0,0.5);
+      z-index: 1;
+    }
+
+    header .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    header .container h1 {
+      color: #FFCC00;
+    }
+
+    header .container .btn {
+      background-color: #006400;
+      color: white;
+    }
+
+    header .container .btn:hover {
+      background-color: #D40000;
+    }
+
+    footer {
+      background-color: #006400;
+    }
+
+    footer p {
+      color: #FFCC00;
+    }
+
+    .card-body .btn {
+      background-color: #006400;
+      color: white;
+    }
+
+    .card-body .btn:hover {
+      background-color: #D40000;
+    }
     .sector-hero {
       background: linear-gradient(135deg, #009543, #fcd116, #dc241f);
       color: white;
@@ -29,117 +132,137 @@
       justify-content: center;
       margin-bottom: 15px;
     }
+   
+      #btnTop {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #006400; /* Fond vert */
+        color: white;
+        border: none;
+        border-radius: 50%;
+        padding: 15px;
+        font-size: 24px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        display: none;
+      }
+
+      #btnTop:hover {
+        background-color: #D40000; /* Changer la couleur au survol */
+      }
+    
   </style>
 </head>
+<body>
 
- 
-
-  <!-- Header -->
-  <section class="sector-hero">
-    <div class="container">
-      <h1 class="display-4 fw-bold">Nos Secteurs d'Activité</h1>
-      <p class="lead">Des domaines variés, un même engagement pour la qualité et l’innovation.</p>
-    </div>
-  </section>
-
-  <!-- Secteurs -->
-  <section class="py-5">
-    <div class="container">
-      <div class="row g-4">
-        <!-- Technologie -->
-        <div class="col-md-4">
-          <div class="card text-center sector-card p-4">
-            <div class="icon-circle mx-auto"><i class="bi bi-cpu"></i></div>
-            <h5 class="card-title">Technologie</h5>
-            <p class="card-text">Solutions innovantes pour l’informatique, les télécoms et l’automatisation industrielle.</p>
-          </div>
-        </div>
-
-        <!-- Chimie -->
-        <div class="col-md-4">
-          <div class="card text-center sector-card p-4">
-            <div class="icon-circle mx-auto"><i class="bi bi-beaker"></i></div>
-            <h5 class="card-title">Chimie & Pharma</h5>
-            <p class="card-text">Produits chimiques de haute qualité pour l’industrie et la recherche.</p>
-          </div>
-        </div>
-
-        <!-- Agroalimentaire -->
-        <div class="col-md-4">
-          <div class="card text-center sector-card p-4">
-            <div class="icon-circle mx-auto"><i class="bi bi-basket"></i></div>
-            <h5 class="card-title">Agroalimentaire</h5>
-            <p class="card-text">Distribution de produits sains, biologiques et respectueux des normes alimentaires.</p>
-          </div>
-        </div>
-
-        <!-- Énergie -->
-        <div class="col-md-4">
-          <div class="card text-center sector-card p-4">
-            <div class="icon-circle mx-auto"><i class="bi bi-lightning-charge"></i></div>
-            <h5 class="card-title">Énergie</h5>
-            <p class="card-text">Participation à la transition énergétique avec des solutions renouvelables et durables.</p>
-          </div>
-        </div>
-
-        <!-- Environnement -->
-        <div class="col-md-4">
-          <div class="card text-center sector-card p-4">
-            <div class="icon-circle mx-auto"><i class="bi bi-tree"></i></div>
-            <h5 class="card-title">Environnement</h5>
-            <p class="card-text">Initiatives vertes, recyclage, et développement de produits écoresponsables.</p>
-          </div>
-        </div>
-
-        <!-- Transport -->
-        <div class="col-md-4">
-          <div class="card text-center sector-card p-4">
-            <div class="icon-circle mx-auto"><i class="bi bi-truck"></i></div>
-            <h5 class="card-title">Transport & Logistique</h5>
-            <p class="card-text">Optimisation de la chaîne logistique pour répondre aux enjeux modernes de mobilité.</p>
-          </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <i class="bi bi-box-seam me-2 fs-4"></i>
+          <span class="fw-bold">Industries</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Afficher le menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link active" href="index.html#produits"><i class="bi bi-boxes me-1"></i>Produits</a></li>
+            <li class="nav-item"><a class="nav-link" href="secteur.html#secteurs"><i class="bi bi-diagram-3 me-1"></i>Secteurs</a></li>
+            <li class="nav-item"><a class="nav-link" href="apropos.html#apropos"><i class="bi bi-info-circle me-1"></i>À propos</a></li>
+          </ul>
+          <a href="contact.php#contact" class="btn btn-outline-light ms-lg-3 mt-3 mt-lg-0"><i class="bi bi-envelope-fill me-1"></i> Contact</a>
         </div>
       </div>
-    </div>
-  </section>
+    </nav>
 
- <!-- Bouton retour en haut -->
-<button id="btnTop" class="btn" title="Retour en haut">
-  <i class="bi bi-arrow-up"></i>
-</button>
+    
+      <!-- Header -->
+      <section class="sector-hero">
+        <div class="container">
+          <h1 class="display-4 fw-bold">Nos Secteurs d'Activité</h1>
+          <p class="lead">Des domaines variés, un même engagement pour la qualité et l’innovation.</p>
+        </div>
+      </section>
 
-<!-- Script pour le bouton de retour en haut -->
-<script>
-  const btnTop = document.getElementById("btnTop");
-  window.addEventListener("scroll", () => {
-    btnTop.style.display = window.scrollY > 200 ? "block" : "none";
-  });
+      <!-- Secteurs -->
+      <section class="py-5">
+        <div class="container">
+          <div class="row g-4">
+            <!-- Technologie -->
+            <div class="col-md-4">
+              <div class="card text-center sector-card p-4">
+                <div class="icon-circle mx-auto"><i class="bi bi-cpu"></i></div>
+                <h5 class="card-title">Technologie</h5>
+                <p class="card-text">Solutions innovantes pour l’informatique, les télécoms et l’automatisation industrielle.</p>
+              </div>
+            </div>
 
-  btnTop.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-</script>
+            <!-- Chimie -->
+            <div class="col-md-4">
+              <div class="card text-center sector-card p-4">
+                <div class="icon-circle mx-auto"><i class="bi bi-beaker"></i></div>
+                <h5 class="card-title">Chimie & Pharma</h5>
+                <p class="card-text">Produits chimiques de haute qualité pour l’industrie et la recherche.</p>
+              </div>
+            </div>
 
-<?php include('footer.php'); ?>
+            <!-- Agroalimentaire -->
+            <div class="col-md-4">
+              <div class="card text-center sector-card p-4">
+                <div class="icon-circle mx-auto"><i class="bi bi-basket"></i></div>
+                <h5 class="card-title">Agroalimentaire</h5>
+                <p class="card-text">Distribution de produits sains, biologiques et respectueux des normes alimentaires.</p>
+              </div>
+            </div>
 
-<!-- Style supplémentaire pour positionner et styliser le bouton -->
-<style>
-  #btnTop {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #006400; /* Fond vert */
-    color: white;
-    border: none;
-    border-radius: 50%;
-    padding: 15px;
-    font-size: 24px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    display: none;
-  }
+            <!-- Énergie -->
+            <div class="col-md-4">
+              <div class="card text-center sector-card p-4">
+                <div class="icon-circle mx-auto"><i class="bi bi-lightning-charge"></i></div>
+                <h5 class="card-title">Énergie</h5>
+                <p class="card-text">Participation à la transition énergétique avec des solutions renouvelables et durables.</p>
+              </div>
+            </div>
 
-  #btnTop:hover {
-    background-color: #D40000; /* Changer la couleur au survol */
-  }
-</style>
+            <!-- Environnement -->
+            <div class="col-md-4">
+              <div class="card text-center sector-card p-4">
+                <div class="icon-circle mx-auto"><i class="bi bi-tree"></i></div>
+                <h5 class="card-title">Environnement</h5>
+                <p class="card-text">Initiatives vertes, recyclage, et développement de produits écoresponsables.</p>
+              </div>
+            </div>
+
+            <!-- Transport -->
+            <div class="col-md-4">
+              <div class="card text-center sector-card p-4">
+                <div class="icon-circle mx-auto"><i class="bi bi-truck"></i></div>
+                <h5 class="card-title">Transport & Logistique</h5>
+                <p class="card-text">Optimisation de la chaîne logistique pour répondre aux enjeux modernes de mobilité.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <!-- Bouton retour en haut -->
+    <button id="btnTop" class="btn" title="Retour en haut">
+      <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Script pour le bouton de retour en haut -->
+    <script>
+      const btnTop = document.getElementById("btnTop");
+      window.addEventListener("scroll", () => {
+        btnTop.style.display = window.scrollY > 200 ? "block" : "none";
+      });
+
+      btnTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+    
+  </body>
+</html>
